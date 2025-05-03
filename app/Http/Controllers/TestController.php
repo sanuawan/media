@@ -44,6 +44,8 @@ class TestController extends Controller
         $store->audio = $audioPath;
         
         $store->save();
+
+        session()->flash('success', 'Your data is submitted successfully');
         return redirect()->back();
     }
 

@@ -57,6 +57,14 @@
         a:hover {
             background:rgb(21, 143, 42);
         }
+        .alert{
+            padding:10px;
+            margin:20px;
+            /* border:1px solid black; */
+            font-size:25px;
+            color: #155724;
+        }
+
     </style>
 </head>
 <body>
@@ -66,6 +74,13 @@
             <a href="{{ route('Sanaullah.list') }}">List</a>
         </div>
         <h2>This is Media Page</h2>
+
+        @if(session('success'))
+            <div class="alert">
+                {{ session ('success') }}
+            </div>
+        @endif
+
         <form action="{{ route('user.post') }}" method="post" enctype="multipart/form-data">
             @csrf
             <label for="fname">First Name</label>
